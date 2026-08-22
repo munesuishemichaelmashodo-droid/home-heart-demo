@@ -1214,3 +1214,124 @@ nav a:hover {
     flex-direction: column;
     gap: 0;
     border-top: 1px solid #333;
+/* QUOTE REQUEST */
+
+.quote-section {
+  background: var(--light);
+  padding: 100px 0;
+}
+
+.quote-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+  align-items: start;
+}
+
+.quote-intro h2 {
+  font-size: clamp(38px, 6vw, 60px);
+  line-height: 1;
+  letter-spacing: -2px;
+  margin-bottom: 20px;
+}
+
+.quote-intro h2 span {
+  display: block;
+  color: var(--gold);
+}
+
+.quote-intro > p:not(.eyebrow) {
+  color: var(--muted);
+  max-width: 480px;
+}
+
+.quote-points {
+  margin-top: 40px;
+}
+
+.quote-points div {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid #d8d7d1;
+}
+
+.quote-points strong {
+  color: var(--gold);
+  font-size: 12px;
+}
+
+.quote-points span {
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.quote-form {
+  background: white;
+  padding: 35px;
+  box-shadow: 0 15px 45px rgba(0,0,0,.08);
+}
+
+.quote-form label {
+  display: block;
+  font-size: 11px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.quote-form input,
+.quote-form select,
+.quote-form textarea {
+  width: 100%;
+  border: 1px solid var(--border);
+  padding: 14px;
+  margin-bottom: 20px;
+  font-family: inherit;
+  font-size: 14px;
+  background: white;
+  outline: none;
+}
+
+.quote-form input:focus,
+.quote-form select:focus,
+.quote-form textarea:focus {
+  border-color: var(--gold);
+}
+
+.quote-form textarea {
+  resize: vertical;
+}
+
+.quote-submit {
+  border: none;
+  cursor: pointer;
+  width: 100%;
+}
+
+.form-note {
+  color: #888;
+  font-size: 10px;
+  text-align: center;
+  margin-top: 12px;
+}
+
+
+/* MOBILE QUOTE */
+
+@media (max-width: 700px) {
+
+  .quote-section {
+    padding: 70px 0;
+  }
+
+  .quote-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .quote-form {
+    padding: 25px 20px;
+  }
+
+}
