@@ -1,21 +1,25 @@
 /* =========================================================
    HOME HEART CONTRACTORS
-   COMPLETE RESPONSIVE STYLESHEET
+   PREMIUM RESPONSIVE STYLESHEET
    ========================================================= */
 
 :root {
   --dark: #111111;
-  --dark-soft: #1b1b1b;
+  --dark-2: #1b1b1b;
+  --dark-3: #252525;
+
   --white: #ffffff;
   --light: #f5f4f0;
+
   --text: #202020;
   --muted: #707070;
+
   --gold: #d89a25;
   --gold-light: #efb442;
-  --border: #deddd8;
+
+  --border: #deddd7;
 
   --max-width: 1180px;
-  --radius: 0px;
 }
 
 /* =========================================================
@@ -30,7 +34,6 @@
 
 html {
   scroll-behavior: smooth;
-  scroll-padding-top: 80px;
 }
 
 body {
@@ -39,6 +42,12 @@ body {
   background: var(--white);
   line-height: 1.6;
   overflow-x: hidden;
+}
+
+img {
+  display: block;
+  width: 100%;
+  max-width: 100%;
 }
 
 a {
@@ -53,13 +62,8 @@ textarea {
   font-family: inherit;
 }
 
-img {
-  display: block;
-  max-width: 100%;
-}
-
 /* =========================================================
-   GLOBAL
+   CONTAINER
    ========================================================= */
 
 .container {
@@ -67,29 +71,33 @@ img {
   margin: 0 auto;
 }
 
-.section {
-  padding: 100px 0;
-}
+/* =========================================================
+   TYPOGRAPHY
+   ========================================================= */
 
 .eyebrow {
   color: var(--gold);
   font-size: 11px;
   font-weight: 800;
   letter-spacing: 2.5px;
-  margin-bottom: 15px;
+  margin-bottom: 16px;
+}
+
+.section {
+  padding: 100px 0;
 }
 
 .section-heading {
-  max-width: 680px;
+  max-width: 700px;
   margin-bottom: 55px;
 }
 
 .section-heading h2,
 .about-content h2 {
   font-size: clamp(36px, 5vw, 58px);
-  line-height: 1.02;
+  line-height: 1;
   letter-spacing: -2.5px;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .section-heading h2 span,
@@ -100,21 +108,7 @@ img {
 
 .section-heading > p:last-child {
   color: var(--muted);
-  max-width: 600px;
-}
-
-/* =========================================================
-   DEMO / TOP NOTICE
-   ========================================================= */
-
-.demo-notice {
-  background: var(--gold);
-  color: #111;
-  text-align: center;
-  padding: 7px 15px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1px;
+  max-width: 580px;
 }
 
 /* =========================================================
@@ -126,7 +120,7 @@ img {
   top: 0;
   z-index: 1000;
   background: rgba(17, 17, 17, 0.97);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(12px);
 }
 
 .nav {
@@ -137,7 +131,7 @@ img {
 }
 
 .logo {
-  color: var(--white);
+  color: white;
   font-size: 19px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -167,19 +161,18 @@ nav a {
   color: #ddd;
   font-size: 13px;
   font-weight: 700;
-  padding: 8px 0;
-  transition: color 0.25s ease;
+  transition: 0.25s ease;
 }
 
 nav a::after {
   content: "";
   position: absolute;
   left: 0;
-  bottom: 0;
+  bottom: -7px;
   width: 0;
   height: 2px;
   background: var(--gold);
-  transition: width 0.25s ease;
+  transition: 0.25s ease;
 }
 
 nav a:hover {
@@ -193,10 +186,9 @@ nav a:hover::after {
 .menu-btn {
   display: none;
   border: 0;
-  background: transparent;
+  background: none;
   color: white;
   font-size: 28px;
-  line-height: 1;
   cursor: pointer;
 }
 
@@ -206,7 +198,7 @@ nav a:hover::after {
 
 .hero {
   position: relative;
-  min-height: 680px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -229,23 +221,35 @@ nav a:hover::after {
     linear-gradient(
       90deg,
       rgba(0, 0, 0, 0.9) 0%,
-      rgba(0, 0, 0, 0.68) 45%,
-      rgba(0, 0, 0, 0.28) 100%
+      rgba(0, 0, 0, 0.72) 42%,
+      rgba(0, 0, 0, 0.35) 100%
     );
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  right: -180px;
+  bottom: -220px;
+  width: 520px;
+  height: 520px;
+  border: 85px solid rgba(216, 154, 37, 0.11);
+  border-radius: 50%;
+  pointer-events: none;
 }
 
 .hero-content {
   position: relative;
   z-index: 2;
-  width: 100%;
   color: white;
-  padding: 110px 0;
+  max-width: 900px;
+  padding: 100px 0;
 }
 
 .hero h1 {
   max-width: 850px;
   font-size: clamp(45px, 7vw, 82px);
-  line-height: 0.97;
+  line-height: 0.96;
   letter-spacing: -4px;
   margin-bottom: 28px;
 }
@@ -259,13 +263,12 @@ nav a:hover::after {
   max-width: 620px;
   color: #ddd;
   font-size: 17px;
-  line-height: 1.7;
   margin-bottom: 36px;
 }
 
 .hero-buttons {
   display: flex;
-  gap: 13px;
+  gap: 14px;
   flex-wrap: wrap;
 }
 
@@ -274,21 +277,17 @@ nav a:hover::after {
    ========================================================= */
 
 .btn {
-  min-height: 52px;
-  padding: 0 26px;
+  min-height: 54px;
+  padding: 0 27px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   border: 0;
   font-size: 13px;
   font-weight: 800;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
   cursor: pointer;
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease,
-    color 0.25s ease,
-    border-color 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .btn-primary {
@@ -298,19 +297,18 @@ nav a:hover::after {
 
 .btn-primary:hover {
   background: var(--gold-light);
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 .btn-outline {
-  border: 1px solid rgba(255,255,255,0.55);
+  border: 1px solid rgba(255,255,255,0.6);
   color: white;
-  background: transparent;
 }
 
 .btn-outline:hover {
   background: white;
   color: #111;
-  transform: translateY(-2px);
+  transform: translateY(-3px);
 }
 
 /* =========================================================
@@ -329,7 +327,7 @@ nav a:hover::after {
 
 .trust-grid div {
   min-height: 105px;
-  padding: 25px 22px;
+  padding: 28px 22px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -337,21 +335,19 @@ nav a:hover::after {
 }
 
 .trust-grid div:last-child {
-  border-right: none;
+  border-right: 0;
 }
 
 .trust-grid strong {
-  display: block;
   color: var(--gold);
   font-size: 11px;
   letter-spacing: 1.5px;
 }
 
 .trust-grid span {
-  display: block;
   color: #aaa;
   font-size: 12px;
-  margin-top: 5px;
+  margin-top: 4px;
 }
 
 /* =========================================================
@@ -365,42 +361,48 @@ nav a:hover::after {
 }
 
 .service-card {
-  min-height: 285px;
+  position: relative;
+  min-height: 280px;
   border: 1px solid var(--border);
-  background: white;
   padding: 30px 25px;
-  display: flex;
-  flex-direction: column;
-  transition:
-    transform 0.25s ease,
-    border-color 0.25s ease,
-    box-shadow 0.25s ease;
+  background: white;
+  transition: 0.3s ease;
+  overflow: hidden;
+}
+
+.service-card::after {
+  content: "";
+  position: absolute;
+  right: -35px;
+  bottom: -35px;
+  width: 100px;
+  height: 100px;
+  border: 18px solid rgba(216, 154, 37, 0.08);
+  border-radius: 50%;
 }
 
 .service-card:hover {
-  transform: translateY(-6px);
+  transform: translateY(-7px);
   border-color: var(--gold);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
 }
 
 .service-number {
   color: var(--gold);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: 1px;
-  margin-bottom: auto;
+  margin-bottom: 70px;
 }
 
 .service-card h3 {
   font-size: 18px;
-  line-height: 1.25;
-  margin-bottom: 12px;
+  line-height: 1.2;
+  margin-bottom: 13px;
 }
 
 .service-card p {
   color: var(--muted);
-  font-size: 14px;
-  line-height: 1.7;
+  font-size: 13px;
 }
 
 /* =========================================================
@@ -417,10 +419,6 @@ nav a:hover::after {
   margin-bottom: 0;
 }
 
-.why-heading h2 {
-  color: white;
-}
-
 .why-heading > p:last-child {
   color: #999;
 }
@@ -428,25 +426,31 @@ nav a:hover::after {
 .why-grid {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
-  gap: 1px;
   margin-top: 55px;
-  background: #333;
+  border: 1px solid #333;
 }
 
 .why-card {
-  min-height: 275px;
+  min-height: 280px;
+  padding: 34px 26px;
   background: var(--dark);
-  padding: 32px 25px;
-  display: flex;
-  flex-direction: column;
+  border-right: 1px solid #333;
+  transition: 0.25s ease;
+}
+
+.why-card:last-child {
+  border-right: 0;
+}
+
+.why-card:hover {
+  background: var(--dark-2);
 }
 
 .why-icon {
   color: var(--gold);
   font-size: 12px;
   font-weight: 900;
-  letter-spacing: 1px;
-  margin-bottom: auto;
+  margin-bottom: 65px;
 }
 
 .why-card h3 {
@@ -457,7 +461,6 @@ nav a:hover::after {
 .why-card p {
   color: #999;
   font-size: 13px;
-  line-height: 1.7;
 }
 
 /* =========================================================
@@ -493,7 +496,7 @@ nav a:hover::after {
   position: absolute;
   left: 18px;
   bottom: 18px;
-  background: rgba(0,0,0,0.75);
+  background: rgba(0,0,0,0.78);
   color: white;
   padding: 8px 12px;
   font-size: 9px;
@@ -504,7 +507,6 @@ nav a:hover::after {
 .about-content > p:not(.eyebrow) {
   color: var(--muted);
   margin-bottom: 18px;
-  max-width: 570px;
 }
 
 .stats {
@@ -512,7 +514,7 @@ nav a:hover::after {
   gap: 45px;
   margin-top: 38px;
   padding-top: 25px;
-  border-top: 1px solid #d2d1cb;
+  border-top: 1px solid #d1d0ca;
 }
 
 .stats div {
@@ -523,13 +525,12 @@ nav a:hover::after {
 .stats strong {
   color: var(--gold);
   font-size: 25px;
-  line-height: 1;
 }
 
 .stats span {
   color: var(--muted);
   font-size: 11px;
-  margin-top: 5px;
+  margin-top: 3px;
 }
 
 /* =========================================================
@@ -547,23 +548,20 @@ nav a:hover::after {
 }
 
 .project-card {
-  overflow: hidden;
   border: 1px solid var(--border);
   background: white;
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  overflow: hidden;
+  transition: 0.3s ease;
 }
 
 .project-card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+  transform: translateY(-6px);
+  box-shadow: 0 18px 45px rgba(0,0,0,0.08);
 }
 
 .project-image {
   position: relative;
-  width: 100%;
-  height: 280px;
+  height: 285px;
   overflow: hidden;
   background: #222;
 }
@@ -572,8 +570,7 @@ nav a:hover::after {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  transition: transform 0.4s ease;
+  transition: 0.5s ease;
 }
 
 .project-card:hover .project-image img {
@@ -604,15 +601,14 @@ nav a:hover::after {
 }
 
 .project-info h3 {
+  margin: 8px 0;
   font-size: 19px;
-  line-height: 1.25;
-  margin: 8px 0 10px;
+  line-height: 1.2;
 }
 
 .project-info p {
   color: var(--muted);
   font-size: 13px;
-  line-height: 1.7;
 }
 
 /* =========================================================
@@ -620,25 +616,40 @@ nav a:hover::after {
    ========================================================= */
 
 .cta {
+  position: relative;
+  overflow: hidden;
   background:
     linear-gradient(
       110deg,
-      #111111,
+      #111,
       #292929
     );
   color: white;
-  padding: 110px 0;
+  padding: 105px 0;
   text-align: center;
 }
 
+.cta::after {
+  content: "";
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  right: -160px;
+  top: -180px;
+  border: 65px solid rgba(216,154,37,0.1);
+  border-radius: 50%;
+}
+
 .cta-content {
+  position: relative;
+  z-index: 2;
   max-width: 760px;
-  margin: 0 auto;
+  margin: auto;
 }
 
 .cta h2 {
   font-size: clamp(38px, 6vw, 64px);
-  line-height: 1;
+  line-height: 0.98;
   letter-spacing: -3px;
   margin-bottom: 22px;
 }
@@ -659,14 +670,14 @@ nav a:hover::after {
 
 .quote-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 0.9fr 1.1fr;
   gap: 70px;
   align-items: start;
 }
 
 .quote-intro h2 {
   font-size: clamp(38px, 6vw, 60px);
-  line-height: 1;
+  line-height: 0.98;
   letter-spacing: -2.5px;
   margin-bottom: 22px;
 }
@@ -678,11 +689,11 @@ nav a:hover::after {
 
 .quote-intro > p:not(.eyebrow) {
   color: var(--muted);
-  max-width: 500px;
+  max-width: 480px;
 }
 
 .quote-points {
-  margin-top: 40px;
+  margin-top: 38px;
 }
 
 .quote-points div {
@@ -690,13 +701,12 @@ nav a:hover::after {
   align-items: center;
   gap: 18px;
   padding: 18px 0;
-  border-bottom: 1px solid #d8d7d1;
+  border-bottom: 1px solid #d5d4ce;
 }
 
 .quote-points strong {
   color: var(--gold);
   font-size: 12px;
-  min-width: 22px;
 }
 
 .quote-points span {
@@ -706,13 +716,12 @@ nav a:hover::after {
 
 .quote-form {
   background: white;
-  padding: 35px;
-  box-shadow: 0 15px 45px rgba(0,0,0,0.08);
+  padding: 38px;
+  box-shadow: 0 18px 50px rgba(0,0,0,0.08);
 }
 
 .quote-form label {
   display: block;
-  color: #222;
   font-size: 11px;
   font-weight: 800;
   margin-bottom: 7px;
@@ -723,20 +732,19 @@ nav a:hover::after {
 .quote-form textarea {
   width: 100%;
   border: 1px solid var(--border);
-  border-radius: 0;
   padding: 14px;
   margin-bottom: 20px;
-  background: white;
-  color: #222;
   font-size: 14px;
+  background: white;
   outline: none;
-  transition: border-color 0.2s ease;
+  transition: 0.2s ease;
 }
 
 .quote-form input:focus,
 .quote-form select:focus,
 .quote-form textarea:focus {
   border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(216,154,37,0.08);
 }
 
 .quote-form textarea {
@@ -773,12 +781,7 @@ nav a:hover::after {
   min-height: 150px;
   border: 1px solid var(--border);
   padding: 30px;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  transition:
-    border-color 0.25s ease,
-    transform 0.25s ease;
+  transition: 0.25s ease;
 }
 
 .contact-card:hover {
@@ -792,7 +795,7 @@ nav a:hover::after {
   font-size: 10px;
   font-weight: 900;
   letter-spacing: 1.5px;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .contact-card a {
@@ -800,13 +803,8 @@ nav a:hover::after {
   font-weight: 700;
 }
 
-.contact-card a:hover {
-  color: var(--gold);
-}
-
 .contact-card p {
   color: var(--muted);
-  font-size: 14px;
 }
 
 /* =========================================================
@@ -816,7 +814,7 @@ nav a:hover::after {
 .footer {
   background: #0d0d0d;
   color: #999;
-  padding: 50px 0;
+  padding: 48px 0;
 }
 
 .footer-content {
@@ -826,12 +824,12 @@ nav a:hover::after {
   gap: 30px;
 }
 
-.footer .logo {
-  margin-bottom: 12px;
-}
-
 .footer p {
   font-size: 12px;
+}
+
+.footer .logo {
+  margin-bottom: 12px;
 }
 
 .copyright {
@@ -839,47 +837,41 @@ nav a:hover::after {
 }
 
 /* =========================================================
-   FLOATING WHATSAPP
+   WHATSAPP
    ========================================================= */
 
 .whatsapp {
   position: fixed;
   right: 20px;
   bottom: 20px;
-  z-index: 999;
-
   width: 58px;
   height: 58px;
-
   border-radius: 50%;
-
-  background: #25D366;
+  background: #25d366;
   color: white;
-
   display: flex;
   align-items: center;
   justify-content: center;
-
   font-size: 13px;
   font-weight: 900;
-
-  box-shadow: 0 8px 25px rgba(0,0,0,0.25);
-
-  transition:
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.28);
+  z-index: 999;
+  transition: 0.25s ease;
 }
 
 .whatsapp:hover {
   transform: scale(1.08);
-  box-shadow: 0 12px 30px rgba(0,0,0,0.3);
 }
 
 /* =========================================================
    TABLET
    ========================================================= */
 
-@media (max-width: 1000px) {
+@media (max-width: 900px) {
+
+  .section {
+    padding: 80px 0;
+  }
 
   .services-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -889,22 +881,39 @@ nav a:hover::after {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .why-card {
+    border-bottom: 1px solid #333;
+  }
+
+  .why-card:nth-child(2) {
+    border-right: 0;
+  }
+
   .about-grid {
+    grid-template-columns: 1fr;
     gap: 45px;
+  }
+
+  .about-image {
+    height: 440px;
   }
 
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  .quote-grid {
+    grid-template-columns: 1fr;
+    gap: 45px;
+  }
+
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
 }
 
 /* =========================================================
-   MOBILE NAVIGATION
+   MOBILE
    ========================================================= */
 
 @media (max-width: 700px) {
@@ -917,8 +926,6 @@ nav a:hover::after {
     padding: 70px 0;
   }
 
-  /* HEADER */
-
   .nav {
     min-height: 65px;
   }
@@ -929,21 +936,15 @@ nav a:hover::after {
 
   nav {
     display: none;
-
     position: absolute;
     top: 65px;
     left: 0;
     right: 0;
-
-    padding: 10px 5%;
-
+    padding: 8px 5%;
     background: #111;
-
     flex-direction: column;
     align-items: stretch;
-
     gap: 0;
-
     border-top: 1px solid #333;
   }
 
@@ -956,31 +957,25 @@ nav a:hover::after {
     border-bottom: 1px solid #292929;
   }
 
-  nav a:last-child {
-    border-bottom: none;
+  nav a::after {
+    display: none;
   }
-
-  /* HERO */
 
   .hero {
     min-height: 650px;
-  }
-
-  .hero-image {
-    object-position: center;
   }
 
   .hero-overlay {
     background:
       linear-gradient(
         90deg,
-        rgba(0,0,0,0.88),
+        rgba(0,0,0,0.9),
         rgba(0,0,0,0.55)
       );
   }
 
   .hero-content {
-    padding: 85px 0;
+    padding: 80px 0;
   }
 
   .hero h1 {
@@ -990,49 +985,29 @@ nav a:hover::after {
 
   .hero-text {
     font-size: 15px;
-    line-height: 1.65;
   }
 
   .hero-buttons {
     flex-direction: column;
   }
 
-  .hero-buttons .btn {
+  .btn {
     width: 100%;
   }
-
-  /* TRUST */
 
   .trust-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
   .trust-grid div {
-    min-height: 95px;
-    border-right: 1px solid #333;
+    min-height: 90px;
+    padding: 22px 18px;
     border-bottom: 1px solid #333;
   }
 
-  .trust-grid div:nth-child(2n) {
-    border-right: none;
+  .trust-grid div:nth-child(2) {
+    border-right: 0;
   }
-
-  .trust-grid div:nth-last-child(-n + 2) {
-    border-bottom: none;
-  }
-
-  /* HEADINGS */
-
-  .section-heading {
-    margin-bottom: 40px;
-  }
-
-  .section-heading h2,
-  .about-content h2 {
-    font-size: clamp(36px, 11vw, 50px);
-  }
-
-  /* SERVICES */
 
   .services-grid {
     grid-template-columns: 1fr;
@@ -1042,7 +1017,9 @@ nav a:hover::after {
     min-height: 235px;
   }
 
-  /* WHY */
+  .service-number {
+    margin-bottom: 50px;
+  }
 
   .why-section {
     padding: 70px 0;
@@ -1050,23 +1027,26 @@ nav a:hover::after {
 
   .why-grid {
     grid-template-columns: 1fr;
-    gap: 1px;
-    margin-top: 40px;
   }
 
-  .why-card {
-    min-height: 220px;
+  .why-card,
+  .why-card:nth-child(2) {
+    min-height: auto;
+    padding: 30px 24px;
+    border-right: 0;
+    border-bottom: 1px solid #333;
   }
 
-  /* ABOUT */
+  .why-card:last-child {
+    border-bottom: 0;
+  }
 
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
+  .why-icon {
+    margin-bottom: 40px;
   }
 
   .about-image {
-    height: 360px;
+    height: 350px;
   }
 
   .stats {
@@ -1074,107 +1054,79 @@ nav a:hover::after {
     gap: 15px;
   }
 
-  /* PROJECTS */
-
   .projects-grid {
     grid-template-columns: 1fr;
   }
 
   .project-image {
-    height: 270px;
+    height: 260px;
   }
 
-  /* CTA */
-
   .cta {
-    padding: 80px 0;
+    padding: 75px 0;
   }
 
   .cta h2 {
-    font-size: clamp(38px, 11vw, 54px);
+    font-size: clamp(38px, 11vw, 52px);
   }
-
-  /* QUOTE */
 
   .quote-section {
     padding: 70px 0;
-  }
-
-  .quote-grid {
-    grid-template-columns: 1fr;
-    gap: 40px;
-  }
-
-  .quote-intro h2 {
-    font-size: clamp(38px, 11vw, 54px);
   }
 
   .quote-form {
     padding: 25px 20px;
   }
 
-  /* CONTACT */
+  .quote-intro h2 {
+    font-size: clamp(38px, 11vw, 52px);
+  }
 
   .contact-grid {
     grid-template-columns: 1fr;
   }
-
-  .contact-card {
-    min-height: 130px;
-  }
-
-  /* FOOTER */
 
   .footer-content {
     flex-direction: column;
     align-items: flex-start;
   }
 
-}
-
-/* =========================================================
-   SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 420px) {
-
-  .container {
-    width: 88%;
-  }
-
-  .hero {
-    min-height: 620px;
-  }
-
-  .hero h1 {
-    font-size: 43px;
-  }
-
-  .trust-grid div {
-    padding: 20px 15px;
-  }
-
-  .stats {
-    gap: 10px;
-  }
-
-  .stats strong {
-    font-size: 22px;
-  }
-
-  .stats span {
-    font-size: 10px;
-  }
-
-  .quote-form {
-    padding: 22px 17px;
-  }
-
   .whatsapp {
     width: 54px;
     height: 54px;
-    right: 15px;
-    bottom: 15px;
+    right: 16px;
+    bottom: 16px;
+  }
+}
+
+/* =========================================================
+   VERY SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 380px) {
+
+  .hero h1 {
+    font-size: 42px;
   }
 
+  .section-heading h2,
+  .about-content h2 {
+    font-size: 37px;
+  }
+
+  .trust-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .trust-grid div {
+    border-right: 0;
+  }
+
+  .stats {
+    gap: 8px;
+  }
+
+  .stats strong {
+    font-size: 21px;
+  }
 }
