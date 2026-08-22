@@ -1,20 +1,26 @@
+/* =========================================================
+   HOME HEART CONTRACTORS
+   COMPLETE RESPONSIVE STYLESHEET
+   ========================================================= */
+
 :root {
   --dark: #111111;
-  --dark-2: #1b1b1b;
-  --dark-3: #252525;
+  --dark-soft: #1b1b1b;
   --white: #ffffff;
-  --light: #f4f3ef;
-  --text: #222222;
+  --light: #f5f4f0;
+  --text: #202020;
   --muted: #707070;
   --gold: #d89a25;
   --gold-light: #efb442;
   --border: #deddd8;
+
   --max-width: 1180px;
+  --radius: 0px;
 }
 
-/* =========================================
+/* =========================================================
    RESET
-   ========================================= */
+   ========================================================= */
 
 * {
   margin: 0;
@@ -48,81 +54,60 @@ textarea {
 }
 
 img {
-  width: 100%;
   display: block;
+  max-width: 100%;
 }
+
+/* =========================================================
+   GLOBAL
+   ========================================================= */
 
 .container {
   width: min(92%, var(--max-width));
   margin: 0 auto;
 }
 
-/* =========================================
-   DEMO NOTICE
-   ========================================= */
+.section {
+  padding: 100px 0;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+  margin-bottom: 15px;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 55px;
+}
+
+.section-heading h2,
+.about-content h2 {
+  font-size: clamp(36px, 5vw, 58px);
+  line-height: 1.02;
+  letter-spacing: -2.5px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 span,
+.about-content h2 span {
+  display: block;
+  color: var(--gold);
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  max-width: 600px;
+}
+
+/* =========================================================
+   DEMO / TOP NOTICE
+   ========================================================= */
 
 .demo-notice {
   background: var(--gold);
   color: #111;
-  text-align: center;
-  padding: 7px 15px;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.5px;
-}
-
-/* =========================================
-   HEADER
-   ========================================= */
-
-.header {
-  position: sticky;
-  top: 0;
-  z-index: 1000;
-  background: rgba(17, 17, 17, 0.97);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-.nav {
-  min-height: 72px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.logo {
-  color: var(--white);
-  font-size: 19px;
-  font-weight: 900;
-  letter-spacing: 1px;
-  line-height: 1;
-}
-
-.logo span {
-  color: var(--gold);
-}
-
-.logo small {
-  display: block;
-  color: #999;
-  font-size: 7px;
-  letter-spacing: 3px;
-  margin-top: 6px;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-}
-
-nav a {
-  position: relative;
-  color: #ddd;
-  font-size: 13px;
-  font-weight: 700;
-  transition: 0.25s ease;
-}
-
-nav a::after
+  text
