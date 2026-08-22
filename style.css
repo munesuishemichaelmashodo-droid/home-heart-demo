@@ -1334,4 +1334,81 @@ nav a:hover {
     padding: 25px 20px;
   }
 
+}/* WHY CHOOSE US */
+
+.why-section {
+  background: #111111;
+  color: white;
+  padding: 100px 0;
 }
+
+.why-heading {
+  max-width: 650px;
+}
+
+.why-heading > p:last-child {
+  color: #999;
+}
+
+.why-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1px;
+  background: #333;
+  margin-top: 55px;
+}
+
+.why-card {
+  background: #111;
+  padding: 35px 25px;
+  min-height: 260px;
+}
+
+.why-icon {
+  color: var(--gold);
+  font-size: 12px;
+  font-weight: 900;
+  margin-bottom: 55px;
+}
+
+.why-card h3 {
+  font-size: 18px;
+  margin-bottom: 12px;
+}
+
+.why-card p {
+  color: #999;
+  font-size: 13px;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .why-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .why-section {
+    padding: 70px 0;
+  }
+
+  .why-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .why-card {
+    min-height: auto;
+    padding: 30px 22px;
+  }
+
+  .why-icon {
+    margin-bottom: 25px;
+  }
+
+    }
