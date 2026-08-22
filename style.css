@@ -1,19 +1,15 @@
 :root {
   --dark: #111111;
-  --dark-2: #1b1b1b;
+  --dark-2: #1c1c1c;
   --white: #ffffff;
   --light: #f4f3ef;
-  --text: #202020;
+  --text: #222222;
   --muted: #707070;
   --gold: #d89a25;
   --gold-light: #efb442;
   --border: #deddd8;
   --max-width: 1180px;
 }
-
-/* ==============================
-   RESET
-============================== */
 
 * {
   margin: 0;
@@ -30,12 +26,11 @@ body {
   color: var(--text);
   background: var(--white);
   line-height: 1.6;
-  overflow-x: hidden;
 }
 
 a {
-  color: inherit;
   text-decoration: none;
+  color: inherit;
 }
 
 img {
@@ -43,85 +38,37 @@ img {
   display: block;
 }
 
-button,
-input,
-select,
-textarea {
-  font-family: inherit;
-}
-
 .container {
   width: min(92%, var(--max-width));
   margin: 0 auto;
 }
 
-.section {
-  padding: 100px 0;
-}
 
-/* ==============================
+/* ================================
    DEMO NOTICE
-============================== */
+================================ */
 
 .demo-notice {
   background: var(--gold);
   color: #111;
   text-align: center;
-  padding: 7px 15px;
+  padding: 7px 12px;
   font-size: 10px;
   font-weight: 900;
-  letter-spacing: 1px;
+  letter-spacing: 1.5px;
 }
 
-/* ==============================
-   TYPOGRAPHY
-============================== */
 
-.eyebrow {
-  color: var(--gold);
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 2.5px;
-  margin-bottom: 15px;
-}
-
-.section-heading {
-  max-width: 680px;
-  margin-bottom: 55px;
-}
-
-.section-heading h2,
-.about-content h2 {
-  font-size: clamp(36px, 5vw, 58px);
-  line-height: 1;
-  letter-spacing: -2.5px;
-  margin-bottom: 20px;
-}
-
-.section-heading h2 span,
-.about-content h2 span,
-.hero h1 span,
-.quote-intro h2 span {
-  display: block;
-  color: var(--gold);
-}
-
-.section-heading > p:last-child {
-  max-width: 580px;
-  color: var(--muted);
-}
-
-/* ==============================
+/* ================================
    HEADER
-============================== */
+================================ */
 
 .header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: rgba(17, 17, 17, 0.96);
-  backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(255,255,255,.06);
+  background: rgba(17, 17, 17, 0.97);
+  backdrop-filter: blur(10px);
 }
 
 .nav {
@@ -132,7 +79,7 @@ textarea {
 }
 
 .logo {
-  color: white;
+  color: var(--white);
   font-size: 19px;
   font-weight: 900;
   letter-spacing: 1px;
@@ -153,15 +100,14 @@ textarea {
 
 nav {
   display: flex;
-  align-items: center;
-  gap: 30px;
+  gap: 28px;
 }
 
 nav a {
   color: #ddd;
   font-size: 13px;
   font-weight: 700;
-  transition: .25s ease;
+  transition: 0.25s ease;
 }
 
 nav a:hover {
@@ -170,20 +116,21 @@ nav a:hover {
 
 .menu-btn {
   display: none;
-  border: 0;
-  background: transparent;
+  border: none;
+  background: none;
   color: white;
   font-size: 28px;
   cursor: pointer;
 }
 
-/* ==============================
+
+/* ================================
    HERO
-============================== */
+================================ */
 
 .hero {
   position: relative;
-  min-height: 720px;
+  min-height: 700px;
   display: flex;
   align-items: center;
   overflow: hidden;
@@ -196,8 +143,6 @@ nav a:hover {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center;
-  filter: saturate(.85);
 }
 
 .hero-overlay {
@@ -206,21 +151,10 @@ nav a:hover {
   background:
     linear-gradient(
       90deg,
-      rgba(0,0,0,.92) 0%,
-      rgba(0,0,0,.72) 42%,
-      rgba(0,0,0,.28) 100%
+      rgba(0, 0, 0, 0.9),
+      rgba(0, 0, 0, 0.62),
+      rgba(0, 0, 0, 0.25)
     );
-}
-
-.hero::after {
-  content: "";
-  position: absolute;
-  width: 520px;
-  height: 520px;
-  right: -220px;
-  bottom: -270px;
-  border: 90px solid rgba(216,154,37,.13);
-  border-radius: 50%;
 }
 
 .hero-content {
@@ -228,21 +162,35 @@ nav a:hover {
   z-index: 2;
   color: white;
   padding: 100px 0;
+  max-width: 850px;
+}
+
+.eyebrow {
+  color: var(--gold);
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 2.5px;
+  margin-bottom: 15px;
 }
 
 .hero h1 {
   max-width: 850px;
-  font-size: clamp(46px, 8vw, 84px);
-  line-height: .95;
+  font-size: clamp(45px, 8vw, 82px);
+  line-height: 0.96;
   letter-spacing: -4px;
   margin-bottom: 28px;
 }
 
+.hero h1 span {
+  display: block;
+  color: var(--gold);
+}
+
 .hero-text {
   max-width: 620px;
-  color: #d7d7d7;
+  color: #ddd;
   font-size: 17px;
-  margin-bottom: 36px;
+  margin-bottom: 35px;
 }
 
 .hero-buttons {
@@ -251,20 +199,16 @@ nav a:hover {
   flex-wrap: wrap;
 }
 
-/* ==============================
-   BUTTONS
-============================== */
-
 .btn {
-  min-height: 54px;
-  padding: 0 27px;
+  min-height: 52px;
+  padding: 0 25px;
   display: inline-flex;
   align-items: center;
   justify-content: center;
   font-size: 13px;
   font-weight: 900;
-  letter-spacing: .4px;
-  transition: .25s ease;
+  letter-spacing: 0.4px;
+  transition: 0.25s ease;
 }
 
 .btn-primary {
@@ -274,24 +218,45 @@ nav a:hover {
 
 .btn-primary:hover {
   background: var(--gold-light);
-  transform: translateY(-3px);
-  box-shadow: 0 12px 30px rgba(216,154,37,.25);
+  transform: translateY(-2px);
 }
 
 .btn-outline {
-  border: 1px solid rgba(255,255,255,.55);
+  border: 1px solid rgba(255, 255, 255, 0.65);
   color: white;
 }
 
 .btn-outline:hover {
   background: white;
   color: #111;
-  transform: translateY(-3px);
 }
 
-/* ==============================
-   TRUST STRIP
-============================== */
+.hero-location {
+  position: absolute;
+  right: 5%;
+  bottom: 35px;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.hero-location span {
+  color: #aaa;
+  font-size: 9px;
+  letter-spacing: 2px;
+}
+
+.hero-location strong {
+  color: white;
+  font-size: 11px;
+  letter-spacing: 1px;
+}
+
+
+/* ================================
+   TRUST
+================================ */
 
 .trust-strip {
   background: var(--dark);
@@ -304,19 +269,19 @@ nav a:hover {
 }
 
 .trust-grid div {
-  padding: 28px 22px;
+  padding: 28px 20px;
   border-right: 1px solid #333;
 }
 
 .trust-grid div:last-child {
-  border-right: 0;
+  border-right: none;
 }
 
 .trust-grid strong {
   display: block;
   color: var(--gold);
   font-size: 11px;
-  letter-spacing: 1.5px;
+  letter-spacing: 1px;
 }
 
 .trust-grid span {
@@ -326,9 +291,43 @@ nav a:hover {
   margin-top: 4px;
 }
 
-/* ==============================
+
+/* ================================
+   GENERAL SECTIONS
+================================ */
+
+.section {
+  padding: 100px 0;
+}
+
+.section-heading {
+  max-width: 680px;
+  margin-bottom: 55px;
+}
+
+.section-heading h2,
+.about-content h2 {
+  font-size: clamp(36px, 6vw, 58px);
+  line-height: 1.03;
+  letter-spacing: -2.5px;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 span,
+.about-content h2 span {
+  display: block;
+  color: var(--gold);
+}
+
+.section-heading > p:last-child {
+  color: var(--muted);
+  max-width: 570px;
+}
+
+
+/* ================================
    SERVICES
-============================== */
+================================ */
 
 .services-grid {
   display: grid;
@@ -337,33 +336,17 @@ nav a:hover {
 }
 
 .service-card {
-  position: relative;
   border: 1px solid var(--border);
   padding: 32px 25px;
   background: white;
-  min-height: 270px;
-  transition: .3s ease;
-}
-
-.service-card::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 3px;
-  background: var(--gold);
-  transition: .3s ease;
+  min-height: 250px;
+  transition: 0.3s ease;
 }
 
 .service-card:hover {
-  transform: translateY(-7px);
+  transform: translateY(-6px);
   border-color: var(--gold);
-  box-shadow: 0 18px 45px rgba(0,0,0,.08);
-}
-
-.service-card:hover::before {
-  width: 100%;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
 }
 
 .service-number {
@@ -374,7 +357,7 @@ nav a:hover {
 }
 
 .service-card h3 {
-  font-size: 19px;
+  font-size: 18px;
   margin-bottom: 12px;
 }
 
@@ -383,12 +366,13 @@ nav a:hover {
   font-size: 14px;
 }
 
-/* ==============================
-   WHY US
-============================== */
+
+/* ================================
+   WHY SECTION
+================================ */
 
 .why-section {
-  background: #111;
+  background: var(--dark);
   color: white;
   padding: 100px 0;
 }
@@ -406,14 +390,9 @@ nav a:hover {
 }
 
 .why-card {
-  background: #111;
+  background: var(--dark);
   padding: 35px 25px;
-  min-height: 270px;
-  transition: .25s ease;
-}
-
-.why-card:hover {
-  background: #181818;
+  min-height: 260px;
 }
 
 .why-icon {
@@ -433,9 +412,10 @@ nav a:hover {
   font-size: 13px;
 }
 
-/* ==============================
+
+/* ================================
    ABOUT
-============================== */
+================================ */
 
 .about {
   background: var(--light);
@@ -444,3 +424,33 @@ nav a:hover {
 .about-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
+  gap: 75px;
+  align-items: center;
+}
+
+.about-image {
+  position: relative;
+  height: 520px;
+  overflow: hidden;
+}
+
+.about-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-label {
+  position: absolute;
+  left: 18px;
+  bottom: 18px;
+  background: rgba(0, 0, 0, 0.78);
+  color: white;
+  padding: 8px 12px;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: 1.5px;
+}
+
+.about-content > p:not(.eyebrow) {
+  color: var(--muted);
